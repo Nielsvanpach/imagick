@@ -32,9 +32,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          path: $HOME/im
-          key: ${{ matrix.imagemagic }}
 
       - name: Apt get commands
         run: |
