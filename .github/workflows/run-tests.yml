@@ -52,7 +52,7 @@ jobs:
           export SKIP_SLOW_TESTS=1
           export TEST_PHP_EXECUTABLE=`which php`
           export PHP_IMAGICK_VERSION=$(php -r '$sxe = simplexml_load_file ("package.xml"); echo (string) $sxe->version->release;')
-          export CFLAGS=$(php util/calculate_cflags.php ${{ matrix.php }} ${{ matrix.imagemagic }})
+          export CFLAGS=$(php util/calculate_cflags.php "${{ matrix.php }}" "${{ matrix.imagemagic }}")
           echo "CFLAGS are ${CFLAGS}"
           phpize
           ./configure --with-imagick="${HOME}/im/imagemagick-${{ matrix.imagemagic }}"
